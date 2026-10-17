@@ -1,14 +1,18 @@
-# Welcome to your Lovable project
+# Shift Auto
+
+lovable, tenho alguns frontends aqui, precisava deixar eles 1000x melhor, com uma interface de css muito bem feita, mas estao em prototipos, consegue me ajudar com isso? olha ai e tenta melhorar ele, a ideia do site é essa
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://shift-auto.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/dc221c4e-c06d-441a-9268-88a2b5712dee).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +24,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
