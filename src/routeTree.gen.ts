@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AgendamentosRouteImport } from './routes/agendamentos'
+import { Route as ConfiguracoesRouteImport } from './routes/configuracoes'
+import { Route as HistoricoRouteImport } from './routes/historico'
+import { Route as PagamentosRouteImport } from './routes/pagamentos'
+import { Route as PerfilRouteImport } from './routes/perfil'
+import { Route as VeiculosIndexRouteImport } from './routes/veiculos.index'
+import { Route as VeiculosIdRouteImport } from './routes/veiculos.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AgendamentosRoute = AgendamentosRouteImport.update({
+  id: '/agendamentos',
+  path: '/agendamentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfiguracoesRoute = ConfiguracoesRouteImport.update({
+  id: '/configuracoes',
+  path: '/configuracoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoricoRoute = HistoricoRouteImport.update({
+  id: '/historico',
+  path: '/historico',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PagamentosRoute = PagamentosRouteImport.update({
+  id: '/pagamentos',
+  path: '/pagamentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerfilRoute = PerfilRouteImport.update({
+  id: '/perfil',
+  path: '/perfil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VeiculosIndexRoute = VeiculosIndexRouteImport.update({
+  id: '/veiculos/',
+  path: '/veiculos/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VeiculosIdRoute = VeiculosIdRouteImport.update({
+  id: '/veiculos/$id',
+  path: '/veiculos/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/agendamentos': typeof AgendamentosRoute
+  '/configuracoes': typeof ConfiguracoesRoute
+  '/historico': typeof HistoricoRoute
+  '/pagamentos': typeof PagamentosRoute
+  '/perfil': typeof PerfilRoute
+  '/veiculos/$id': typeof VeiculosIdRoute
+  '/veiculos/': typeof VeiculosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/agendamentos': typeof AgendamentosRoute
+  '/configuracoes': typeof ConfiguracoesRoute
+  '/historico': typeof HistoricoRoute
+  '/pagamentos': typeof PagamentosRoute
+  '/perfil': typeof PerfilRoute
+  '/veiculos/$id': typeof VeiculosIdRoute
+  '/veiculos': typeof VeiculosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/agendamentos': typeof AgendamentosRoute
+  '/configuracoes': typeof ConfiguracoesRoute
+  '/historico': typeof HistoricoRoute
+  '/pagamentos': typeof PagamentosRoute
+  '/perfil': typeof PerfilRoute
+  '/veiculos/$id': typeof VeiculosIdRoute
+  '/veiculos/': typeof VeiculosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/agendamentos'
+    | '/configuracoes'
+    | '/historico'
+    | '/pagamentos'
+    | '/perfil'
+    | '/veiculos/$id'
+    | '/veiculos/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/agendamentos'
+    | '/configuracoes'
+    | '/historico'
+    | '/pagamentos'
+    | '/perfil'
+    | '/veiculos/$id'
+    | '/veiculos'
+  id:
+    | '__root__'
+    | '/'
+    | '/agendamentos'
+    | '/configuracoes'
+    | '/historico'
+    | '/pagamentos'
+    | '/perfil'
+    | '/veiculos/$id'
+    | '/veiculos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AgendamentosRoute: typeof AgendamentosRoute
+  ConfiguracoesRoute: typeof ConfiguracoesRoute
+  HistoricoRoute: typeof HistoricoRoute
+  PagamentosRoute: typeof PagamentosRoute
+  PerfilRoute: typeof PerfilRoute
+  VeiculosIdRoute: typeof VeiculosIdRoute
+  VeiculosIndexRoute: typeof VeiculosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/agendamentos': {
+      id: '/agendamentos'
+      path: '/agendamentos'
+      fullPath: '/agendamentos'
+      preLoaderRoute: typeof AgendamentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/configuracoes': {
+      id: '/configuracoes'
+      path: '/configuracoes'
+      fullPath: '/configuracoes'
+      preLoaderRoute: typeof ConfiguracoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/historico': {
+      id: '/historico'
+      path: '/historico'
+      fullPath: '/historico'
+      preLoaderRoute: typeof HistoricoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pagamentos': {
+      id: '/pagamentos'
+      path: '/pagamentos'
+      fullPath: '/pagamentos'
+      preLoaderRoute: typeof PagamentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/perfil': {
+      id: '/perfil'
+      path: '/perfil'
+      fullPath: '/perfil'
+      preLoaderRoute: typeof PerfilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/veiculos/': {
+      id: '/veiculos/'
+      path: '/veiculos'
+      fullPath: '/veiculos/'
+      preLoaderRoute: typeof VeiculosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/veiculos/$id': {
+      id: '/veiculos/$id'
+      path: '/veiculos/$id'
+      fullPath: '/veiculos/$id'
+      preLoaderRoute: typeof VeiculosIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AgendamentosRoute: AgendamentosRoute,
+  ConfiguracoesRoute: ConfiguracoesRoute,
+  HistoricoRoute: HistoricoRoute,
+  PagamentosRoute: PagamentosRoute,
+  PerfilRoute: PerfilRoute,
+  VeiculosIdRoute: VeiculosIdRoute,
+  VeiculosIndexRoute: VeiculosIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
