@@ -25,7 +25,7 @@ const days = ["Seg 23", "Ter 24", "Qua 25", "Qui 26", "Sex 27", "Sáb 28"];
 function Agendamentos() {
   const [day, setDay] = useState(days[0]);
   const [slot, setSlot] = useState("09:30");
-  const [car, setCar] = useState(vehicles[0].id);
+  const [car, setCar] = useState(vehicles[0]!.id);
   return (
     <AppShell>
       <PageHeader
