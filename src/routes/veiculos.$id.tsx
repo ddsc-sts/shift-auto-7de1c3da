@@ -35,7 +35,7 @@ const stateUi = {
 function VehiclePage() {
   const v = Route.useLoaderData();
   const [sel, setSel] = useState(v.components[0]?.id ?? "");
-  const c = v.components.find((x) => x.id === sel) ?? v.components[0];
+  const c = (v.components.find((x) => x.id === sel) ?? v.components[0])!;
   const st = stateUi[c.state];
 
   return (
